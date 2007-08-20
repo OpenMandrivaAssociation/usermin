@@ -2,7 +2,7 @@
 
 %define		name	usermin
 %define		version	1.150
-%define		release 1mdk
+%define		release %mkrel 1
 
 Summary:	A web-based user account administration interface
 Name:		usermin
