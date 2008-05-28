@@ -31,7 +31,6 @@ browser and login as any user on your system.
 %prep
 %setup -q
 %patch1 -p 0 -b .init
-#%patch2 -p 1 -b .os_list
 %patch3 -p0
 %patch4 -p1
 perl -pi -e 's|/tmp/.webmin|/root/.webmin|' *
