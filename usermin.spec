@@ -1,8 +1,8 @@
 %define __spec_install_post %{nil}
 
 %define		name	usermin
-%define		version	1.150
-%define		release %mkrel 2
+%define		version	1.350
+%define		release %mkrel 1
 
 Summary:	A web-based user account administration interface
 Name:		usermin
@@ -12,7 +12,7 @@ Provides:	%{name}-%{version}
 License:	BSD
 Group:		System/Configuration/Other
 URL:		http://www.usermin.com/
-Source:		http://www.webmin.com/download/%{name}-%{version}.tar.bz2
+Source:		http://www.webmin.com/download/%{name}-%{version}.tar.gz
 Patch1:		usermin-0.980-init-with-reload.diff
 Patch3:		usermin-1.020-never-fail-detect-os.patch
 Patch4:		usermin-1.150-os_list.patch
@@ -30,10 +30,10 @@ browser and login as any user on your system.
 
 %prep
 %setup -q
-%patch1 -p 0 -b .init
+#%patch1 -p 0 -b .init
 #%patch2 -p 1 -b .os_list
 %patch3 -p0
-%patch4 -p1
+#%patch4 -p1
 perl -pi -e 's|/tmp/.webmin|/root/.webmin|' *
 
 %build
