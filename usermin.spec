@@ -15,7 +15,7 @@ URL:		http://www.usermin.com/
 Source:		http://www.webmin.com/download/%{name}-%{version}.tar.gz
 Patch1:		usermin-1.350-init-with-reload.diff
 Patch3:		usermin-1.020-never-fail-detect-os.patch
-Patch4:		usermin-1.150-os_list.patch
+Patch4:		usermin-1.350-os_list.patch
 Requires:	perl
 Requires(pre):	rpm-helper
 Requires:	perl perl-Net_SSLeay 
@@ -33,7 +33,7 @@ browser and login as any user on your system.
 %patch1 -p 0 -b .init
 #%patch2 -p 1 -b .os_list
 %patch3 -p0
-#%patch4 -p1
+%patch4 -p1
 perl -pi -e 's|/tmp/.webmin|/root/.webmin|' *
 
 %build
