@@ -1,8 +1,8 @@
 %define __spec_install_post %{nil}
 
 %define		name	usermin
-%define		version	1.350
-%define		release %mkrel 3
+%define		version	1.420
+%define		release %mkrel 1
 
 Summary:	A web-based user account administration interface
 Name:		usermin
@@ -15,7 +15,7 @@ URL:		http://www.usermin.com/
 Source:		http://www.webmin.com/download/%{name}-%{version}.tar.gz
 Patch1:		usermin-1.350-init-with-reload.diff
 Patch3:		usermin-1.020-never-fail-detect-os.patch
-Patch4:		usermin-1.350-os_list.patch
+Patch4:		usermin-1.420-os_list.patch
 Requires:	perl
 Requires(pre):	rpm-helper
 Requires:	perl perl-Net_SSLeay 
