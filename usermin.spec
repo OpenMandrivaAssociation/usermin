@@ -1,7 +1,7 @@
 %define __spec_install_post %{nil}
 
 %define		name	usermin
-%define		version	1.420
+%define		version	1.430
 %define		release %mkrel 1
 
 Summary:	A web-based user account administration interface
