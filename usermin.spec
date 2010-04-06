@@ -1,21 +1,15 @@
 %define __spec_install_post %{nil}
 
-%define		name	usermin
-%define		version	1.430
-%define		release %mkrel 1
-
 Summary:	A web-based user account administration interface
 Name:		usermin
-Version:	%{version}
-Release:	%{release}
+Version:	1.440
+Release:	%mkrel 1
 Provides:	%{name}-%{version}
 License:	BSD
 Group:		System/Configuration/Other
 URL:		http://www.usermin.com/
 Source:		http://www.webmin.com/download/%{name}-%{version}.tar.gz
-Patch1:		usermin-1.350-init-with-reload.diff
-Patch3:		usermin-1.020-never-fail-detect-os.patch
-Patch4:		usermin-1.420-os_list.patch
+Patch3:		usermin-1.440-never-fail-detect-os.patch
 Requires:	perl
 Requires(pre):	rpm-helper
 Requires:	perl perl-Net_SSLeay 
@@ -30,9 +24,8 @@ browser and login as any user on your system.
 
 %prep
 %setup -q
-%patch1 -p 0 -b .init
 %patch3 -p0
-%patch4 -p1
+
 perl -pi -e 's|/tmp/.webmin|/root/.webmin|' *
 
 %build
