@@ -2,7 +2,7 @@
 
 Summary:	A web-based user account administration interface
 Name:		usermin
-Version:	1.490
+Version:	1.500
 Release:	%mkrel 1
 Provides:	%{name}-%{version}
 License:	BSD
