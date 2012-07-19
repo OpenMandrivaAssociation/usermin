@@ -2,13 +2,13 @@
 
 Summary:	A web-based user account administration interface
 Name:		usermin
-Version:	1.500
+Version:	1.510
 Release:	%mkrel 1
 Provides:	%{name}-%{version}
 License:	BSD
 Group:		System/Configuration/Other
 URL:		http://www.usermin.com/
-Source:		http://www.webmin.com/download/%{name}-%{version}.tar.gz
+Source:		http://heanet.dl.sourceforge.net/project/webadmin/%{name}/%{version}/%{name}-%{version}.tar.gz
 Patch3:		usermin-1.440-never-fail-detect-os.patch
 Requires:	perl
 Requires(pre):	rpm-helper
