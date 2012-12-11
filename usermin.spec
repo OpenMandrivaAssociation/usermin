@@ -1,19 +1,19 @@
 %define __spec_install_post %{nil}
+%define __noautoreq 'perl\\(\\)'
 
 Summary:	A web-based user account administration interface
 Name:		usermin
 Version:	1.510
-Release:	%mkrel 1
+Release:	2
 Provides:	%{name}-%{version}
 License:	BSD
 Group:		System/Configuration/Other
 URL:		http://www.usermin.com/
-Source:		http://heanet.dl.sourceforge.net/project/webadmin/%{name}/%{version}/%{name}-%{version}.tar.gz
+Source0:	http://heanet.dl.sourceforge.net/project/webadmin/%{name}/%{version}/%{name}-%{version}.tar.gz
 Patch3:		usermin-1.440-never-fail-detect-os.patch
 Requires:	perl
 Requires(pre):	rpm-helper
 Requires:	perl perl-Net_SSLeay 
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 
 %description
@@ -60,9 +60,6 @@ find %{buildroot}%{_datadir}/usermin \( \
 	-exec chmod 755 {} \;
 
 echo rpm >%{buildroot}%{_datadir}/usermin/install-type
-
-%clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
 %pre
 perl <<EOD;
@@ -147,11 +144,9 @@ if [ "$1" = 0 ]; then
 fi
 
 %files
-%defattr(-,root,root)
 %doc LICENCE* README
 #%{_libexecdir}/usermin
 %{_datadir}/usermin
 %config(noreplace) %{_sysconfdir}/sysconfig/usermin
 %config(noreplace) %{_sysconfdir}/pam.d/usermin
 %config(noreplace) %{_initrddir}/usermin
-
