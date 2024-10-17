@@ -8,7 +8,7 @@ Release:	3
 Provides:	%{name}-%{version}
 License:	BSD
 Group:		System/Configuration/Other
-URL:		http://www.usermin.com/
+URL:		https://www.usermin.com/
 Source0:	http://heanet.dl.sourceforge.net/project/webadmin/%{name}/%{version}/%{name}-%{version}.tar.gz
 Patch3:		usermin-1.440-never-fail-detect-os.patch
 Requires:	perl
